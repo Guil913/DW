@@ -32,10 +32,17 @@
 
 .main, p {
     margin-left: 20%; 
-    font-size: 28px; 
-    padding: 0 10px;
+ 
     transition: margin-left 0.3s ease;
 }
+
+p{
+padding:3%;
+font-size: 28px; 
+text-align: justify;
+}
+
+
 
 header {
     display: flex;
