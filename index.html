@@ -2,39 +2,53 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="css/general.css">
     <title>The Vault</title>
 </head>
 <body>
-<header>
-    <a href="index.html">
-        <button class="logo"></button>
-    </a>
+    <header>
+        <a href="index.html">
+            <button class="logo"></button>
+        </a>
+        <search>
+            <form onsubmit="searchArticles(event)">
+                <input id="year-input" class="search-bar" placeholder="Enter Year (e.g., 2023)" required>
+                <input id="month-input" class="search-bar" placeholder="Enter Month (1-12)" required>
+                <button type="submit">Search</button>
+            </form>
+        </search>
+        <a href="profile.html">
+            <button class="profile-button"></button>
+        </a>  
+    </header>
 
-    <search>
-        <form onsubmit="searchArticles(event)">
-            <input id="year-input" class="search-bar" placeholder="Enter Year (e.g., 2023)" required>
-            <input id="month-input" class="search-bar" placeholder="Enter Month (1-12)" required>
-            <button type="submit">Search</button>
-        </form>
-    </search>
+    <div class="sidenav">
+        <a href="/time-machine">Time Machine</a>
+        <a href="/gallery-search.html">Gallery search</a>
+        <a href="/popular">Popular</a>
+        <a href="/random-article">Random</a>
+    </div>
+    <div id="sidenav-toggle" onclick="toggleSidenav()">&#9664;</div> 
     
-
-    <a href="profile.html">
-        <button class="profile-button"></button>
-    </a>  
-</header>
-<div class="sidenav">
-    <a href="/time-machine">Time Machine</a>
-    <a href="/gallery-search">Gallery search</a>
-    <a href="/popular">Popular</a>
-    <a href="/random-article">Random</a>
-</div>
 <main>
-    <p>Content, time machine, popular</p>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer odio quam, elementum at imperdiet ac, molestie in tellus. Integer vestibulum arcu sit amet lectus venenatis, sit amet congue velit malesuada. Aliquam faucibus fringilla leo, nec eleifend justo rutrum quis. Integer arcu sem, vestibulum vel nisl a, efficitur varius libero. In ultrices ante mi, non accumsan odio gravida nec. Morbi bibendum elit quis sollicitudin commodo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In vestibulum, odio a porttitor dignissim, lectus urna dignissim leo, at rhoncus eros lorem ut risus. Duis eu pellentesque neque. Mauris elementum justo in placerat placerat. Sed massa nisi, aliquet posuere bibendum quis, ornare et felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et tortor vitae purus posuere vehicula. Sed egestas velit vitae mauris aliquet egestas sed non velit. Donec eu bibendum urna.
+
+        Quisque suscipit eros enim, ut fermentum ipsum blandit eget. Aliquam id libero massa. Ut id porttitor massa. Morbi in mi non enim sagittis fringilla ac nec massa. Ut elit libero, aliquam ac suscipit ut, tincidunt a diam. Phasellus consectetur felis ante, tempus accumsan nisi dapibus at. Duis placerat ipsum vitae mauris feugiat, placerat tincidunt quam sagittis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam et elit diam. Fusce imperdiet augue non porta vestibulum. Fusce mauris dolor, elementum ac nunc aliquam, suscipit pellentesque lorem.
+        
+        Curabitur vel orci mi. Maecenas elementum lacus vitae lorem convallis, nec ultrices felis pulvinar. Praesent elementum nisi a blandit bibendum. Vivamus nec risus quis justo dapibus lobortis nec fermentum tortor. Sed dapibus tempor quam, et sollicitudin lectus. Phasellus vulputate dapibus felis non euismod. Phasellus eleifend vitae mauris ut ullamcorper. Quisque maximus quam in lorem tempor, a fermentum est efficitur. Sed maximus tortor vitae mauris ultricies, et mollis metus auctor. Sed lacinia mollis lorem et vehicula. Praesent eu lectus in enim interdum pellentesque at hendrerit nulla. Mauris gravida mauris non accumsan rutrum. Integer sodales, nibh ut lacinia sodales, mauris mi scelerisque odio, quis tempus ante ligula quis nulla. Nunc fringilla magna non neque eleifend, sit amet posuere massa interdum. Praesent eu nunc malesuada ante fringilla aliquam in a risus.
+        
+        Quisque malesuada non nisi vitae ultrices. Aenean laoreet mauris luctus velit faucibus, sit amet congue dui mollis. Fusce id facilisis nisi. Phasellus in justo vitae justo egestas porta. In nec mauris ac enim aliquam varius. Ut quis lorem nec nulla gravida gravida quis ac mi. Aenean volutpat lobortis condimentum. Nam at placerat quam, eu lobortis sem.
+        
+        In ac nibh id libero volutpat pellentesque. Morbi a sapien nibh. Suspendisse lacinia mi augue, vel congue purus ultricies aliquam. Nulla vitae felis mi. Nullam luctus mauris ut mi efficitur mattis. Morbi in fringilla est. Donec at sem sit amet purus facilisis sollicitudin vitae sed lorem. Phasellus interdum nibh eget felis tincidunt sollicitudin. Morbi venenatis quam at scelerisque iaculis. Vivamus eros enim, egestas vitae consectetur at, porttitor quis mi. Sed risus tortor, viverra sit amet fermentum sit amet, interdum sit amet odio.
+        
+        Aliquam erat volutpat. Etiam a ipsum tristique, dignissim nibh a, posuere erat. In in augue ac ex iaculis commodo et in lacus. Nulla lobortis placerat dictum. Fusce faucibus, lorem quis vehicula mollis, nisi ligula mattis arcu, commodo pellentesque ante diam ac orci. Nullam fermentum tempus tincidunt. Praesent ultrices eros cursus ipsum euismod, sed interdum sem iaculis.
+
+    </p>
     <div id="results"></div> <!-- resultados -->
 </main>
 
 <script src="scripts/api.js"></script>
+<script src="scripts/general.js"></script>
 </body>
 </html>
