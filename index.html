@@ -2,14 +2,8 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="general.css"> 
-   
-
-
-
-    <title>por escolher</title>
-    
+    <link rel="stylesheet" href="general.css">
+    <title>The Vault</title>
 </head>
 <body>
 <header>
@@ -17,34 +11,30 @@
         <button class="logo"></button>
     </a>
 
-
     <search>
-        <form>
-          <input class="search-bar" placeholder="Search">
+        <form onsubmit="searchArticles(event)">
+            <input id="year-input" class="search-bar" placeholder="Enter Year (e.g., 2023)" required>
+            <input id="month-input" class="search-bar" placeholder="Enter Month (1-12)" required>
+            <button type="submit">Search</button>
         </form>
-      </search>
-
+    </search>
+    
 
     <a href="profile.html">
         <button class="profile-button"></button>
     </a>  
-
 </header>
 <div class="sidenav">
     <a href="/time-machine">Time Machine</a>
     <a href="/gallery-search">Gallery search</a>
+    <a href="/popular">Popular</a>
     <a href="/random-article">Random</a>
-  </div>
+</div>
 <main>
-
-
-
-    <a href="    ">
-        <button class="popup-button">About Us</button>
-    </a>  
+    <p>Content, time machine, popular</p>
+    <div id="results"></div> <!-- resultados -->
 </main>
 
-
-
+<script src="scripts/api.js"></script>
 </body>
 </html>
