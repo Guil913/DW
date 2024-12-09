@@ -26,7 +26,7 @@ async function searchArticles(event) {
         const data = await response.json();
         displayResults(data.response.docs);
     } catch (error) {
-        console.error("Error fetching articles:", error);
-        document.getElementById("results").textContent = "Error fetching articles. Please try again later.";
+        console.error("Error fetching:", error);
+        document.getElementById("results").textContent = "Error fetching";
     }
 }
