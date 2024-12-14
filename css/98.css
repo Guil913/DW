@@ -27,7 +27,7 @@ body {
     background-color: #c0c0c0;
     position: relative;
     width: 26rem;
-    height: 26rem;
+    height: 30rem;
     margin: 0 auto;
     box-sizing: border-box;
     border-top: 4px solid #ffffff;
@@ -53,7 +53,7 @@ body {
     top: 100%;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin-top: 15%;
+    margin-top: 8rem;
 }
 
 .button {
@@ -169,6 +169,72 @@ h1 {
 .search-button:active {
     background-color: #404040;
     color: white;
+}
+
+.windows-buttons-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.windows-button {
+    background-color: #c0c0c0;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-bottom: 3px solid #555555;
+    border-right: 3px solid #555555;
+    font-family: "Windows Regular", "Fixedsys", "MS Sans Serif", monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    box-shadow: inset -0.125rem -0.125rem 0.125rem rgba(255, 255, 255, 0.7), inset 0.125rem 0.125rem 0.125rem rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.windows-button:hover {
+    background-color: #808080;
+}
+
+.windows-button:active {
+    background-color: #404040;
+    color: white;
+}
+
+.cross-button {
+    color: red;
+}
+
+.check-button {
+    color: green;
+}
+
+.black-square-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #808080;
+    border-top: 4px solid #ffffff;
+    border-left: 4px solid #ffffff;
+    border-bottom: 4px solid #555555;
+    border-right: 4px solid #555555;
+    width: 90%;
+    margin: 10px auto;
+}
+
+.black-square {
+    width: 96%;
+    height: 40px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    font-size: 1.5rem;
 }
 
 /*sidenav___________________________________________________________________ */
