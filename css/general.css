@@ -1,34 +1,4 @@
-.sidenav {
-    height: 100%;
-    width: 20%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    padding-top: 20px;
-    transition: width 0.3s ease;
-}
 
-.sidenav.collapsed {
-    width: 0;
-    padding: 0;
-}
-
-.sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-}
-
-.sidenav.collapsed a {
-    opacity: 0;
-}
 
 .main, p {
     margin-left: 20%; 
@@ -115,24 +85,3 @@ header .profile-button {
     margin: 5px 0;
 }
 
-#sidenav-toggle {
-    position: fixed;
-    top: 50%;
-    left: 20%;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 40px;
-    background-color: #111;
-    color: white;
-    text-align: center;
-    line-height: 40px;
-    font-size: 20px;
-    cursor: pointer;
-    z-index: 2;
-    border-radius: 0 5px 5px 0;
-    transition: left 0.3s ease;
-}
-
-.sidenav.collapsed + #sidenav-toggle {
-    left: 0;
-}

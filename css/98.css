@@ -4,7 +4,9 @@
     font-weight: normal;
     font-style: normal;
 }
-
+body{
+    background-color: #00807F;
+}
 
 
 .image-container {
@@ -123,4 +125,90 @@ h1 {
     padding: 20px; 
     margin: 20px auto; 
     box-sizing: border-box; 
+}
+
+/* __________________________________________________ */
+.sidenav {
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #c0c0c0; 
+    overflow-x: hidden;
+    padding-top: 1.25rem; 
+    border-right: 0.25rem solid rgba(0, 0, 0, 0.4); 
+    border-left: 0.25rem solid rgba(0, 0, 0, 0.6); 
+    border-bottom: 0.25rem solid rgba(0, 0, 0, 0.6); 
+    border-top: 0.25rem solid white;
+    box-shadow: inset -0.25rem -0.25rem 0.25rem rgba(255, 255, 255, 0.7), 
+    inset 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.3);
+
+    transition: width 0.3s ease;
+    font-family: "Windows Regular", "Fixedsys", "MS Sans Serif", monospace;
+}
+
+.sidenav.collapsed {
+    width: 0;
+    padding: 0;
+}
+
+.sidenav a {
+    padding: 0.625rem 1.25rem; 
+    text-decoration: none;
+    font-family: "Windows Regular", "Fixedsys", "MS Sans Serif", monospace;
+    font-size: 1.2rem;
+    color: #000000;
+    background-color: #c0c0c0;
+    display: block;
+    border-top: 0.125rem solid white;
+    border-left: 0.125rem solid white; 
+    border-bottom: 0.125rem solid rgba(0, 0, 0, 0.6); 
+    border-right: 0.125rem solid rgba(0, 0, 0, 0.6); 
+    margin: 0.3125rem 0; 
+    text-align: left;
+    box-shadow: inset -0.0625rem -0.0625rem 0.0625rem rgba(255, 255, 255, 0.7), 
+                inset 0.0625rem 0.0625rem 0.0625rem rgba(0, 0, 0, 0.3); 
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.sidenav a:hover {
+    background-color: #808080; 
+}
+
+.sidenav.collapsed a {
+    opacity: 0;
+}
+
+.sidenav-toggle {
+    position: fixed;
+    top: 50%;
+    left: 20%;
+    transform: translateY(-50%);
+    width: 1.5rem; 
+    height: 3rem; 
+    background-color: #c0c0c0;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    line-height: 3rem; 
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 2;
+    border-top: 0.125rem solid white; 
+    border-left: 0.125rem solid white; 
+    border-bottom: 0.125rem solid rgba(0, 0, 0, 0.6); 
+    border-right: 0.125rem solid rgba(0, 0, 0, 0.6); 
+    box-shadow: inset -0.0625rem -0.0625rem 0.0625rem rgba(255, 255, 255, 0.7), 
+                inset 0.0625rem 0.0625rem 0.0625rem rgba(0, 0, 0, 0.3); 
+    border-radius: 0 0.3125rem 0.3125rem 0; 
+    transition: left 0.3s ease, background-color 0.3s ease;
+}
+
+.sidenav-toggle:hover {
+    background-color: #808080; 
+}
+
+.sidenav.collapsed + .sidenav-toggle {
+    left: 0;
 }
