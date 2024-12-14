@@ -35,6 +35,13 @@ body {
     border-bottom: 4px solid #555555;
     border-right: 4px solid #555555;
 }
+.title-bar {
+    width: 26rem; 
+    margin: 0 auto; 
+    background-color: #808080; 
+    text-align: center;
+    box-sizing: border-box;
+}
 
 .grid-container {
     background-color: #808080;
