@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link
-  rel="stylesheet"
-  href="https://unpkg.com/98.css"
->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Vault</title>
+    <link rel="stylesheet" href="https://unpkg.com/98.css"> 
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/98.css">
-    <title>The Vault</title>
 </head>
 <body>
+   
     <header>
         <a href="index.html">
             <button class="logo"></button>
@@ -35,24 +34,18 @@
     </div>
     <div class="sidenav-toggle" id="sidenav-toggle">&#9664;</div> 
 
+  
     <main class="main-content">
         <div class="title-bar">
-            <div class="title-bar-text">type a date</div>
-            
-          </div>
+            <div class="title-bar-text">Type a Date</div>
+        </div>
         <div class="background-container">
             <div class="time-machine-wrapper">
                 <div class="image-container">
                     <h1>The Time Machine</h1>
                     <div class="black-square-wrapper">
-                        <div class="black-square"></div>
+                        <div id="black-square" class="black-square"></div>
                     </div>
-
-                    <div class="windows-buttons-wrapper">
-                        <button class="windows-button cross-button" onclick="clearDisplay()">X</button>
-                        <button class="windows-button check-button">✔</button>
-                    </div>
-
                     <div class="grid-container">
                         <div class="button">1</div>
                         <div class="button">2</div>
@@ -65,11 +58,18 @@
                         <div class="button">9</div>
                         <div class="button">0</div>
                     </div>
+                    <div class="windows-buttons-wrapper">
+                        <button class="windows-button cross-button" onclick="clearDisplay()">X</button>
+                        <button class="windows-button check-button">✔</button>
+                    </div>
                 </div>
             </div>
         </div>
+        <div id="results"></div> 
     </main>
 
+
     <script src="scripts/general.js"></script>
+    <script src="scripts/api.js"></script>
 </body>
 </html>

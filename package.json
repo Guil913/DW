@@ -3,5 +3,11 @@
     "98.css": "^0.1.20",
     "express": "^4.21.2",
     "mongodb": "^6.11.0"
+  },
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^33.2.1"
   }
 }
