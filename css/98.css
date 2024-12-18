@@ -472,3 +472,21 @@ header button[type="submit"]:active {
     .profile-buttons button {
         width: 48%;
     }
+
+
+    .icon-wrapper {
+        display: inline-block;
+        border: 2px solid #000; 
+        padding: 3px; 
+        background: #c0c0c0; 
+        box-shadow: 2px 2px 3px #888888, -2px -2px 3px #bbbbbb; 
+        border-radius: 3px; 
+        transition: all 0.2s ease-in-out; 
+    }
+    
+  
+    .icon-wrapper:hover {
+        background: #a0a0a0; 
+        box-shadow: 4px 4px 8px #555555, -4px -4px 8px #ffffff; 
+        transform: scale(1.1); 
+    }
