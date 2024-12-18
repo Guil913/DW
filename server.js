@@ -9,12 +9,20 @@ const PORT = 3000
 app.use(express.static(path.join(__dirname, 'public')))
 
 // API endpoints to serve different content
-app.get('/home', (message, response) => {
+app.get('/api/home', (message, response) => {
     response.json(routes.home)
 })
 
-app.get('/gallery', (message, response) => {
+app.get('/api/gallery', (message, response) => {
     response.json(routes.gallery)
+})
+
+app.get('/api/profile', (message, response) => {
+    response.json(routes.profile)
+})
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 })
 
 // Start the server

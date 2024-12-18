@@ -35,6 +35,7 @@ body {
     border-bottom: 4px solid #555555;
     border-right: 4px solid #555555;
 }
+
 .title-bar {
     width: 26rem; 
     margin: 0 auto; 
@@ -96,7 +97,6 @@ h1 {
     position: relative;
 }
 
-
 .black-square-wrapper {
     display: flex;
     justify-content: center;
@@ -121,7 +121,6 @@ h1 {
     font-size: 1.5rem;
 }
 
-
 .framed-container {
     display: flex;
     justify-content: center;
@@ -136,7 +135,6 @@ h1 {
     margin: 20px auto;
     box-sizing: border-box;
 }
-
 
 .search-bar {
     padding: 0.3125rem 0.625rem;
@@ -154,6 +152,18 @@ h1 {
     background-color: #ffffff;
 }
 
+.search-bar-icon{
+    width: 3.125rem;
+    height: 3.125rem;
+    color: transparent;
+    /* background: url('logo.png') no-repeat center;
+    background-size: contain; */
+    border: 0.125rem solid #000000;
+    padding: 0.3125rem;
+    cursor: pointer;
+    background-color: #c0c0c0;
+    box-shadow: inset 0.0625rem 0.0625rem 0 #fff, inset -0.0625rem -0.0625rem 0 #000;
+}
 
 .search-button {
     padding: 0.3125rem 0.625rem;
@@ -171,6 +181,7 @@ h1 {
 .search-button:hover {
     background-color: #808080;
     color: white;
+    cursor: pointer;
 }
 
 .search-button:active {
@@ -205,6 +216,7 @@ h1 {
 
 .windows-button:hover {
     background-color: #808080;
+    cursor: pointer;
 }
 
 .windows-button:active {
@@ -290,6 +302,7 @@ h1 {
 
 .sidenav a:hover {
     background-color: #808080;
+    cursor: pointer;
 }
 
 .sidenav.collapsed a {
@@ -322,6 +335,7 @@ h1 {
 
 .sidenav-toggle:hover {
     background-color: #808080;
+    cursor: pointer;
 }
 
 .sidenav.collapsed + .sidenav-toggle {
@@ -409,6 +423,7 @@ header button[type="submit"] {
 header button[type="submit"]:hover {
     background-color: #808080;
     color: white;
+    cursor: pointer;
 }
 
 header button[type="submit"]:active {

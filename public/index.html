@@ -10,12 +10,15 @@
 
   <link rel="stylesheet" href="css/gallery.css">
   <title>The Vault</title>
+
+  <script src="script.js"></script>
 </head>
 
 <body>
   <header>
-    <a href="index.html">
-      <button class="logo"></button>
+    <a data-link="home" class="search-bar-icon">
+      a
+      <!-- <button class="logo"></button> -->
     </a>
     <search>
         <form onsubmit="searchArticles(event)">
@@ -24,8 +27,9 @@
           <button type="submit">Search</button>
         </form>
     </search>
-    <a href="profile.html">
-        <button class="profile-button"></button>
+    <a data-link="profile" class="search-bar-icon">
+      a
+      <!-- <button class="profile-button"></button> -->
     </a>  
   </header>
   <div class="sidenav" id="sidenav">
@@ -37,6 +41,5 @@
   <div class="sidenav-toggle" id="sidenav-toggle">&#9664;</div> 
   <main id="main-content">
   </main>
-  <script src="script.js"></script>
 </body>
 </html>

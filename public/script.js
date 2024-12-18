@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const contentDiv = document.getElementById('main-content')
-    
     async function loadPage(page) {
-      const response = await fetch(`/${page}`)
+      const response = await fetch(`/api/${page}`)
       const data = await response.json()
       contentDiv.innerHTML = data.content
     }
@@ -16,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     })
 
-    window.addEventListener('popstate', () => {
+    window.addEventListener('popstate', ()=> {
       const page = window.location.pathname.substring(1) || 'home'
       loadPage(page)
     })
