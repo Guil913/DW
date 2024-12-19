@@ -56,3 +56,11 @@
     color: #0000EE;
     text-decoration: underline;
 }
+
+.login-title-bar{
+    margin: 0 auto;
+    background: linear-gradient(90deg, navy, #1084d0);
+    padding:5px;
+     text-align: center;
+    box-sizing: border-box;
+}

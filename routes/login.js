@@ -1,7 +1,7 @@
 module.exports = {
     content: `
         <div class="login-container window">
-            <div class="title-bar">
+            <div class="login-title-bar">
                 <div class="title-bar-text">Login - Windows 98</div>
             </div>
 
