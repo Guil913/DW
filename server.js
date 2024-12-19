@@ -1,32 +1,39 @@
-const express = require('express');
-const axios = require('axios');
-const cors = require('cors');
+const express = require('express')
+const path = require('path')
+const routes = require('./routes')
 
-const app = express();
-const PORT = 3000;
+const app = express()
+const PORT = 3000
 
+// Serve static files
+app.use(express.static(path.join(__dirname, 'public')))
 
-app.use(cors());
+// API endpoints to serve different content
+app.get('/api/home', (message, response) => {
+    response.json(routes.home)
+})
 
+app.get('/api/gallery', (message, response) => {
+    response.json(routes.gallery)
+})
 
-app.get('/api/articles', async (req, res) => {
-    const { year, month } = req.query;
+app.get('/api/profile', (message, response) => {
+    response.json(routes.profile)
+})
 
-    if (!year || !month || isNaN(year) || isNaN(month) || month < 1 || month > 12) {
-        return res.status(400).json({ error: 'Invalid year or month' });
-    }
+app.get('/api/login', (message, response) => {
+    response.json(routes.login)
+})
 
-    const apiKey = 'G69XSQQ8IncoVzzvulfsaDC9huzYF19E';
-    const apiEndpoint = `https://api.nytimes.com/svc/archive/v1/${year}/${month}.json?api-key=${apiKey}`;
+app.get('/api/register', (message, response) => {
+    response.json(routes.register)
+})
 
-    try {
-        const response = await axios.get(apiEndpoint);
-        res.json(response.data); 
-    } catch (error) {
-        res.status(500).json({ error: 'Failed to fetch articles' });
-    }
-});
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+})
 
+// Start the server
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
+  console.log(`Server running at http://localhost:${PORT}`)
+})

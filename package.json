@@ -1,21 +1,15 @@
 {
-  "dependencies": {
-    "98.css": "^0.1.20",
-    "axios": "^1.7.9",
-    "express": "^4.21.2",
-    "mongodb": "^6.11.0"
-  },
-  "scripts": {
-    "start": "electron ."
-  },
-  "devDependencies": {
-    "electron": "^33.2.1"
-  },
-  "name": "dw",
+  "name": "the-vault",
   "version": "1.0.0",
+  "description": "A simple single-page app with Express.js and MongoDB",
   "main": "server.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.18.2",
+    "mongodb": "^5.0.0",
+    "path": "^0.12.7"
+  }
 }
