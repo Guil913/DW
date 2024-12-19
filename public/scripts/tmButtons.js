@@ -1,9 +1,6 @@
-const blackSquare = document.querySelector(".black-square")
-const buttons = document.querySelectorAll(".button")
-
-buttons.forEach(button => {
+document.querySelectorAll(".button").forEach(button => {
     button.addEventListener("click", function() {
-        let currentInput = blackSquare.textContent
+        let currentInput = document.querySelector(".black-square").textContent
         if (currentInput.length >= 5)
             return
         else if (currentInput.length < 2){ 
@@ -13,10 +10,10 @@ buttons.forEach(button => {
         }
         else if (currentInput.length > 2 && currentInput.length < 5)
             currentInput += button.textContent.trim()
-        blackSquare.textContent = currentInput
+        document.querySelector(".black-square").textContent = currentInput
     })
 })
 
 window.clearDisplay = function() {
-    blackSquare.textContent = ''
+    document.querySelector(".black-square").textContent = ''
 }
