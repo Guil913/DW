@@ -21,6 +21,14 @@ app.get('/api/profile', (message, response) => {
     response.json(routes.profile)
 })
 
+app.get('/api/login', (message, response) => {
+    response.json(routes.login)
+})
+
+app.get('/api/register', (message, response) => {
+    response.json(routes.register)
+})
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 })

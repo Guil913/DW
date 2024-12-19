@@ -1,0 +1,55 @@
+.register-container {
+    width: 600px;
+    margin: 50px auto;
+    background: #C0C0C0;
+    border: 4px solid #808080;
+    box-shadow: inset -4px -4px 4px rgba(255, 255, 255, 0.7),
+                inset 4px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.form-section {
+    margin-bottom: 20px;
+}
+
+.form-section legend {
+    font-weight: bold;
+    padding: 0 8px;
+    background: #808080;
+    border: 2px solid #C0C0C0;
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.form-actions button {
+    width: 48%;
+    font-size: 16px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
