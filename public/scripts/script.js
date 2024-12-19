@@ -4,28 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function historyBack() {
-  async function loadPage(page) {
-    const contentDiv = document.getElementById('main-content')
-    const response = await fetch(`/page/${page}`)
-    const data = await response.json()
-    contentDiv.innerHTML = data.content
-
-    if (page === "home") {
-      const script = document.createElement("script")
-      script.src = "./scripts/tmButtons.js"
-      script.defer = true
-      document.body.appendChild(script)
-    } else if (page === "login") {
-      const script = document.createElement("script")
-      script.src = "./scripts/login.js"
-      script.defer = true
-      document.body.appendChild(script)
-    }
-  }
-  
   document.querySelectorAll('a[data-link]').forEach(link => {
     link.addEventListener('click', (event) => {
-      const page = event.target.getAttribute('data-link')
+      let page = event.target.getAttribute('data-link')
+      if (page === "profile" && !localStorage.getItem('username')) 
+        page = "login"
       loadPage(page)
       history.pushState(null, '', `/${page}`)
       event.preventDefault()
@@ -57,3 +40,32 @@ function sidebarToggle() {
         header.style.width = "calc(100% - 20%)"
     }
 })}
+
+async function loadPage(page) {
+  const contentDiv = document.getElementById('main-content')
+  const response = await fetch(`/page/${page}`)
+  const data = await response.json()
+  contentDiv.innerHTML = data.content
+
+  document.body.querySelectorAll('script').forEach(script => {
+    script.remove()
+  })
+  
+  if (page === "home") {
+    const script = document.createElement("script")
+    script.src = "./scripts/tmButtons.js"
+    script.defer = true
+    document.body.appendChild(script)
+  } else if (page === "login") {
+    const script = document.createElement("script")
+    script.src = "./scripts/login.js"
+    script.defer = true
+    document.body.appendChild(script)
+  } else if (page=== "profile") {
+    const script = document.createElement("script")
+    script.src = "./scripts/profile.js"
+    script.defer = true
+    document.body.appendChild(script)
+  }
+  
+}

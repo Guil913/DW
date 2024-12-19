@@ -22,7 +22,7 @@ module.exports = {
 
             <div class="profile-buttons">
                 <button>Settings</button>
-                <button>Logout</button>
+                <button id="logout">Logout</button>
             </div>
         </div>
     `

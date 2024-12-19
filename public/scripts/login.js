@@ -15,6 +15,7 @@ document.querySelector('#login-form').addEventListener('submit', async function(
 
         if (response.ok) {
             alert('Login successful!')
+            localStorage.setItem('username', username)
             window.location = '/home'
         } else {
             const result = await response.json()

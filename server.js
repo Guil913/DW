@@ -52,8 +52,9 @@ async function main() {
         
         try {
             const user = await users.findOne({ username, password })
-            if (user)
+            if (user){
                 response.status(200).json({ message: 'Login successful' })
+            }
             else 
                 response.status(401).json({ error: 'Invalid username or password' })
         } catch (error) {
@@ -65,7 +66,7 @@ async function main() {
     app.get('*', (req, res) => {
         res.sendFile(path.join(__dirname, 'public', 'index.html'));
     })
-    
+
     app.listen(PORT)
 }
 
