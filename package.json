@@ -4,16 +4,12 @@
   "description": "A simple single-page app with Express.js and MongoDB",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "dotenv": "^16.0.0",
     "express": "^4.18.2",
     "mongodb": "^5.0.0",
     "path": "^0.12.7"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.0"
   }
 }
