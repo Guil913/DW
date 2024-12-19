@@ -6,13 +6,18 @@ document.addEventListener('DOMContentLoaded', () => {
 function historyBack() {
   async function loadPage(page) {
     const contentDiv = document.getElementById('main-content')
-    const response = await fetch(`/api/${page}`)
+    const response = await fetch(`/page/${page}`)
     const data = await response.json()
     contentDiv.innerHTML = data.content
 
     if (page === "home") {
       const script = document.createElement("script")
       script.src = "./scripts/tmButtons.js"
+      script.defer = true
+      document.body.appendChild(script)
+    } else if (page === "login") {
+      const script = document.createElement("script")
+      script.src = "./scripts/login.js"
       script.defer = true
       document.body.appendChild(script)
     }

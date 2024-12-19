@@ -2,38 +2,71 @@ const express = require('express')
 const path = require('path')
 const routes = require('./routes')
 
+const mongodb = require('mongodb')
+const client = new mongodb.MongoClient('mongodb://localhost:6000')
+const db = client.db('theVault')
+
 const app = express()
 const PORT = 3000
 
-// Serve static files
-app.use(express.static(path.join(__dirname, 'public')))
+// Connect to the database
+async function main() {
+    process.on('SIGINT', async () => {
+		await client.close()
+		process.exit()
+	})
 
-// API endpoints to serve different content
-app.get('/api/home', (message, response) => {
-    response.json(routes.home)
-})
+	await client.connect()
 
-app.get('/api/gallery', (message, response) => {
-    response.json(routes.gallery)
-})
+    const users = db.collection('users')
+    // const articles = db.collection('articles')
 
-app.get('/api/profile', (message, response) => {
-    response.json(routes.profile)
-})
+    app.use(express.static(path.join(__dirname, 'public')))
+    app.use(express.urlencoded({ extended: true }))
 
-app.get('/api/login', (message, response) => {
-    response.json(routes.login)
-})
+    app.get('/page/:page', (message, response) => {
+        // console.log(message.params.page)
+        response.json(routes[message.params.page])
+    })
 
-app.get('/api/register', (message, response) => {
-    response.json(routes.register)
-})
+    app.post('/api/register', express.json(), async (message, response) => {
+        const { username, email, password, phone, country, newsletter, updates } = message.body
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-})
+        const user = await users.findOne({ username })
+        if (user) {
+            response.json({ error: 'User already exists' })
+            return
+        } else {
+            try {
+                await users.insertOne({ username, email, password, phone, country, newsletter, updates })
+                response.redirect('/login')
+            } catch (error) {
+                response.json({ error: 'An error occurred' })
+                console.error('Error registering user:', error)
+            }
+        }
+    })
 
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`)
-})
+    app.post('/api/login', express.json(), async (message, response) => {
+        const { username, password } = message.body
+        
+        try {
+            const user = await users.findOne({ username, password })
+            if (user)
+                response.status(200).json({ message: 'Login successful' })
+            else 
+                response.status(401).json({ error: 'Invalid username or password' })
+        } catch (error) {
+            response.status(500).json({ error: 'An error occurred' })
+            console.error('Error logging in:', error)
+        }
+    })
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    })
+    
+    app.listen(PORT)
+}
+
+main()
