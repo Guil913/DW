@@ -6,7 +6,7 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 const mongodb = require('mongodb')
-const client = new mongodb.MongoClient(process.env.MONGODB_URI || 'mongodb://localhost:27017', { useUnifiedTopology: true })
+const client = new mongodb.MongoClient(process.env.MONGO_URI || 'mongodb://localhost:6000')
 const db = client.db('theVault')
 
 const app = express()
