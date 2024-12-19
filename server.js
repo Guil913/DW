@@ -2,12 +2,15 @@ const express = require('express')
 const path = require('path')
 const routes = require('./routes')
 
+const dotenv = require('dotenv')
+dotenv.config()
+
 const mongodb = require('mongodb')
-const client = new mongodb.MongoClient('mongodb://localhost:6000')
+const client = new mongodb.MongoClient(process.env.MONGODB_URI || 'mongodb://localhost:27017', { useUnifiedTopology: true })
 const db = client.db('theVault')
 
 const app = express()
-const PORT = 3000
+const PORT = process.env.PORT || 3000
 
 // Connect to the database
 async function main() {
