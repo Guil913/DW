@@ -1,6 +1,6 @@
 module.exports = {
     content: `
-        <div class="title-bar">
+        <div class="title-bar" class="time-machine-title-bar">
             <div class="title-bar-text">Type a Date</div>
         </div>
         <div class="background-container">

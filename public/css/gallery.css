@@ -31,11 +31,10 @@
     font-size: 14px;
 }
 
-.title-bar {
-    background: #000080;
+.time-machine-title-bar {
+  
     color: white;
     padding: 8px;
-    margin-bottom: 15px;
     border-bottom: 4px solid #808080;
     text-align: center;
 }
