@@ -531,7 +531,7 @@ header button[type="submit"]:active {
       object-fit: cover;
     }
 
-    .article-viewer-content-container {
+    .article-viewer-content-container,  .article-content {
       flex: 1;
     }
 
@@ -589,9 +589,7 @@ header button[type="submit"]:active {
         border: 1px solid black;
       }
   
-      .article-content {
-        flex: 1;
-      }
+    
   
       .article-content .snippet {
         font-style: italic;
