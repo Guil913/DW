@@ -24,36 +24,34 @@ function historyBack() {
   loadPage(initialPage)
 }
 
+
+
 function sidebarToggle() {
-  const sidenavToggle = document.querySelector(".sidenav-toggle")
-  const sidenav = document.querySelector(".sidenav")
+  const sidenavToggle = document.querySelector(".sidenav-toggle");
+  const sidenav = document.querySelector(".sidenav");
 
   sidenavToggle.addEventListener("click", function () {
-
-    console.log("oi");
     sidenav.classList.toggle("collapsed");
 
     const header = document.querySelector("header");
     const main = document.querySelector("main");
 
     if (sidenav.classList.contains("collapsed")) {
-        console.log("oi2");
         header.style.marginLeft = "0";
         header.style.width = "100%";
 
-        
+        main.style.marginLeft = "0";
         main.style.width = "100%";
     } else {
-        console.log("oi3");
         header.style.marginLeft = "20%";
         header.style.width = "calc(100% - 20%)";
 
-      
         main.style.marginLeft = "20%";
         main.style.width = "calc(100% - 20%)";
     }
-});
+  });
 }
+
 
 async function loadPage(page) {
   const contentDiv = document.getElementById('main-content')

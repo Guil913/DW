@@ -1,6 +1,6 @@
 
 main{
 transition: margin-left 0.3s ease;
-
+overflow-x:hidden;
 
 }
