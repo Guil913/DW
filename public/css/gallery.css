@@ -43,7 +43,7 @@
     text-align: center;
 }
 
-.title-bar-text{
+.title-bar-gallery{
 
     text-align: center;
     font-size:1.2rem;
@@ -53,9 +53,9 @@
     justify-content: space-between;
     padding: 3px 5px 5px 3px;
     margin-bottom:20px;
+    color:white;
 
 }
 header {
-  
     margin-bottom:0;
 }

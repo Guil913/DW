@@ -1,7 +1,7 @@
 module.exports = {
     content: `
       
-            <div class="title-bar-text">Gallery</div>
+            <div class="title-bar-gallery">Gallery</div>
         
 
         <div class="gallery-container">
