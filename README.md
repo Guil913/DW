@@ -15,7 +15,7 @@ How to Run Locally:
    - Create a new file called `.env` in your project folder.
    - Add the following environment variables to the `.env` file:
      PORT=3000
-     MONGODB_URI=mongodb://localhost:6000/thevault
+     MONGODB_URI=mongodb://localhost:6000
 
 4. Start MongoDB Server:
    - Open a terminal and navigate to your desired folder [cd /path/to/your/project/folder,p.e.].
@@ -33,7 +33,7 @@ How to Run Locally:
 5. Run the Application:
    - After seeding the database, run the following command to start the application:
      npm start
-    - This will start the Node.js server on port 3000 and connect to the MongoDB database.
+   - This will start the Node.js server on port 3000 and connect to the MongoDB database.
 
 6. Access the Application:
     - Open a web browser and navigate to http://localhost:3000 to access the application.
