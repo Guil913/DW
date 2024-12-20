@@ -14,7 +14,7 @@ How to Run Locally:
 3. Create a .env file:
    - Create a new file called `.env` in your project folder.
    - Add the following environment variables to the `.env` file:
-      `PORT=3000 
+      - `PORT=3000 
       MONGODB_URI=mongodb://localhost:6000`
 
 4. Start MongoDB Server:
