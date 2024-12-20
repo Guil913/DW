@@ -552,3 +552,62 @@ header button[type="submit"]:active {
       font-size: 16px;
     }
   
+    .article-window {
+        width: 80%;
+        margin: auto;
+      }
+  
+      .article-header {
+        text-align: center;
+        padding: 20px;
+        background-color: #c0c0c0;
+        border-bottom: 1px solid black;
+      }
+  
+      .article-header h1 {
+        margin: 0;
+        font-size: 24px;
+      }
+  
+      .article-header .meta-info {
+        font-size: 14px;
+        color: gray;
+        margin-top: 5px;
+      }
+  
+      .article-body {
+        display: flex;
+        flex-direction: row;
+        margin: 20px;
+        gap: 20px;
+      }
+  
+      .article-image-container img {
+        max-width: 300px;
+        max-height: 300px;
+        object-fit: cover;
+        border: 1px solid black;
+      }
+  
+      .article-content {
+        flex: 1;
+      }
+  
+      .article-content .snippet {
+        font-style: italic;
+        margin-bottom: 20px;
+      }
+  
+      .article-content .text {
+        font-size: 16px;
+        line-height: 1.5;
+        font-family: 'Times New Roman', Times, serif;
+      }
+  
+      .article-footer {
+        margin-top: 20px;
+        text-align: center;
+        padding: 10px;
+        background-color: #c0c0c0;
+        border-top: 1px solid black;
+      }

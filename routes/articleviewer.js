@@ -17,7 +17,7 @@ module.exports = {
           </div>
         </div>
       </div>
-      <a class="article-link" href="/article.html" target="_blank">Read Full Article</a>
+      <a class="article-link" href="/article" target="_blank">Read Full Article</a>
     </div>
   </div>
     `
