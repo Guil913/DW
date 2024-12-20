@@ -27,6 +27,8 @@ How to Run Locally:
    - Open a second terminal window for your project.
    - Navigate to your project directory and run the following command to seed the database with articles:
      npm run getArticles
+   - If you want a smaller dataset, you can run the following command instead:
+     npm run getArticlesSmall
    - This will populate the MongoDB database with articles from the NYTimes Archive API.
    - Once the seeding process is complete, you terminate the process by pressing `Ctrl + C`.
 
@@ -45,7 +47,6 @@ How to Run Locally:
      mongodb://localhost:6000
 
 Features:
-    -Searchbar: Filters articles by keywords, allowing users to find relevant content quickly.
     -Time Machine: Users can provide a year and a month, and the system will return articles published during that specific time.
     -Gallery Search: Displays thumbnails of articles from a specific year, enabling users to scroll through and select articles visually.
     -Random Article: Get a random article, offering users a surprise piece of content each time.
