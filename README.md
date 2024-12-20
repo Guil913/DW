@@ -26,7 +26,7 @@ How to Run Locally:
 5. Seed the Database:
    - Open a second terminal window for your project.
    - Navigate to your project directory and run the following command to seed the database with articles:
-     npm getArticles
+     npm run getArticles
    - This will populate the MongoDB database with articles from the NYTimes Archive API.
    - Once the seeding process is complete, you terminate the process by pressing `Ctrl + C`.
 
@@ -49,7 +49,7 @@ Features:
     -Time Machine: Users can provide a year and a month, and the system will return articles published during that specific time.
     -Gallery Search: Displays thumbnails of articles from a specific year, enabling users to scroll through and select articles visually.
     -Random Article: Get a random article, offering users a surprise piece of content each time.
-    -Login & Register: Allows users to create accounts and log in. Includes a "Save" feature, where users can save and store their favorite articles for later reading.
+    -Login & Register: Allows users to create accounts and log in.
 
 
 Technologies Used:

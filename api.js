@@ -38,7 +38,9 @@ const fetchArticles = async (year, month) => {
                 url: article.web_url,
                 source: article.source,
                 pub_date: article.pub_date,
-                img_url: article.multimedia.length > 0 ? `https://www.nytimes.com/${article.multimedia[0].url}` : null
+                img_url: article.multimedia.length > 0 ? `https://www.nytimes.com/${article.multimedia[0].url}` : null,
+                year: year,
+                month: month
             }
         })
 

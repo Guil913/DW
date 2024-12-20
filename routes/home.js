@@ -8,7 +8,7 @@ module.exports = {
                 <div class="image-container">
                     <h1>The Time Machine</h1>
                     <div class="black-square-wrapper">
-                        <div id="black-square" class="black-square"></div>
+                        <div id="black-square" class="black-square">YYYY/MM</div>
                     </div>
                     <div class="grid-container">
                         <div class="button">1</div>
@@ -24,10 +24,13 @@ module.exports = {
                     </div>
                     <div class="windows-buttons-wrapper">
                         <button class="windows-button cross-button" onclick="clearDisplay()">X</button>
-                        <button class="windows-button check-button">✔</button>
+                        <button class="windows-button check-button" onclick="fetchArticles()">✔</button>
                     </div>
+                    
                 </div>
             </div>
+        </div>
+        <div class="articles-container">
         </div>`,
 }
   

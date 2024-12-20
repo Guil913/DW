@@ -8,6 +8,7 @@ dotenv.config()
 const mongodb = require('mongodb')
 const client = new mongodb.MongoClient(process.env.MONGO_URI || 'mongodb://localhost:6000')
 const db = client.db('theVault')
+const { ObjectId } = require('mongodb')
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -27,8 +28,58 @@ async function main() {
     app.use(express.static(path.join(__dirname, 'public')))
     app.use(express.urlencoded({ extended: true }))
 
+    app.get('/page/random', async (message, response) => {
+        const articles = db.collection('articles')
+        try {
+            const count = await articles.countDocuments()
+            const randomIndex = Math.floor(Math.random() * count)
+            const randomArticle = await articles.find().skip(randomIndex).limit(1).toArray()
+            
+            if (randomArticle.length > 0) {
+                const article = randomArticle[0]
+                const generateRandomArticleContent = routes.article
+                const articleHtml = generateRandomArticleContent(article)
+                response.json(articleHtml)
+            } else {
+                response.status(404).send('No articles found')
+            }
+        } catch (error) {
+            console.error('Error fetching random article:', error)
+            response.status(500).send('Error fetching random article')
+        }
+    })
+
+    app.get('/page/article/:id', async (message, response) => {
+        const { id } = message.params;
+        try {
+            const article = await db.collection('articles').findOne({ _id: new ObjectId(id) });
+            if (article) {
+                const generateArticle = routes.article
+                const articleHtml = generateArticle(article)
+                response.json(articleHtml);
+            } else {
+                response.status(404).json({ error: 'Article not found' });
+            }
+        } catch (error) {
+            console.error('Error fetching article:', error);
+            response.status(500).json({ error: 'An error occurred while fetching the article.' });
+        }
+    })
+
+    app.get('/api/articles/:year/:month', async (message, response) => {
+        const { year, month } = message.params
+        const articles = db.collection('articles')
+        try {
+            const results = await articles.find({ year: parseInt(year), month: parseInt(month) }).toArray()
+            response.json(results)
+        } catch (error) {
+            console.error('Error fetching articles:', error)
+            response.status(500).json({ error: 'An error occurred while fetching articles.' })
+        }
+    });
+    
+
     app.get('/page/:page', (message, response) => {
-        // console.log(message.params.page)
         response.json(routes[message.params.page])
     })
 

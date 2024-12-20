@@ -24,8 +24,6 @@ function historyBack() {
   loadPage(initialPage)
 }
 
-
-
 function sidebarToggle() {
   const sidenavToggle = document.querySelector(".sidenav-toggle");
   const sidenav = document.querySelector(".sidenav");
