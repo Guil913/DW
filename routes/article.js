@@ -15,6 +15,7 @@ module.exports = function generateArticle(article) {
               </div>
               <div class="article-content">
                   <div class="snippet">${article.snippet}</div>
+                  <p> ${article.author}</p>
                   <a href="${article.url}" target="_blank" class="read-more">Read More</a>
               </div>
           </div>

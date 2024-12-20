@@ -83,6 +83,33 @@ async function main() {
         response.json(routes[message.params.page])
     })
 
+    app.get('/api/years', async (message, response) => {
+        try {
+            const years = await db.collection('articles').distinct('year')
+            response.json(years.sort((a, b) => b - a))
+        } catch (error) {
+            console.error('Error fetching years:', error);
+            response.status(500).json({ error: 'An error occurred while fetching years.' })
+        }
+    })
+
+    app.get('/api/articles', async (message, response) => {
+        const { year } = message.query
+        if (!year) {
+            response.status(400).json({ error: 'Year is required' });
+            return;
+        }
+    
+        try {
+            const articles = await db.collection('articles').find({ year: parseInt(year) }).toArray();
+            response.json(articles);
+        } catch (error) {
+            console.error('Error fetching articles by year:', error);
+            response.status(500).json({ error: 'An error occurred while fetching articles.' });
+        }
+    });
+    
+
     app.post('/api/register', express.json(), async (message, response) => {
         const { username, email, password, phone, country, newsletter, updates } = message.body
 

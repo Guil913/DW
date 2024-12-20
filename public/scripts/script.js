@@ -61,21 +61,18 @@ async function loadPage(page) {
     script.remove()
   })
   
-  if (page === "home") {
-    const script = document.createElement("script")
+  const script = document.createElement("script")
+  script.defer = true
+
+  if (page === "home") 
     script.src = "./scripts/tmButtons.js"
-    script.defer = true
-    document.body.appendChild(script)
-  } else if (page === "login") {
-    const script = document.createElement("script")
+  else if (page === "login")
     script.src = "./scripts/login.js"
-    script.defer = true
-    document.body.appendChild(script)
-  } else if (page=== "profile") {
-    const script = document.createElement("script")
+  else if (page=== "profile")
     script.src = "./scripts/profile.js"
-    script.defer = true
-    document.body.appendChild(script)
-  }
+  else if (page === "gallery")
+    script.src = "./scripts/gallery.js"
+  
+  document.body.appendChild(script)
   
 }
