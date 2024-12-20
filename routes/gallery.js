@@ -1,8 +1,8 @@
 module.exports = {
     content: `
-        <div class="title-bar">
+      
             <div class="title-bar-text">Gallery</div>
-        </div>
+        
 
         <div class="gallery-container">
            
