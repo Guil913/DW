@@ -4,7 +4,8 @@
   "description": "A simple single-page app with Express.js and MongoDB",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "getArticles": "node api.js"
   },
   "dependencies": {
     "dotenv": "^16.0.0",
