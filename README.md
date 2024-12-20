@@ -7,23 +7,42 @@ How to Run Locally:
    - Download and install MongoDB Community Edition from MongoDB Download Center:
      https://www.mongodb.com/try/download/community
 
-2. Start MongoDB Server:
+2. Create a Data Directory:
+   - Create a new directory called `data` in your project folder.
+   - This directory will be used to store the MongoDB database files.
+
+3. Create a .env file:
+   - Create a new file called `.env` in your project folder.
+   - Add the following environment variables to the `.env` file:
+     PORT=3000
+     MONGODB_URI=mongodb://localhost:6000/thevault
+
+4. Start MongoDB Server:
    - Open a terminal and navigate to your desired folder [cd /path/to/your/project/folder,p.e.].
    - Run the following command to start the MongoDB server on port 6000:
      mongod --dbpath data --port 6000
    - This will start the MongoDB server and use the `data` directory to store the database files.
 
-3. Connect to MongoDB with MongoDB Compass:
+5. Seed the Database:
+   - Open a second terminal window for your project.
+   - Navigate to your project directory and run the following command to seed the database with articles:
+     npm getArticles
+   - This will populate the MongoDB database with articles from the NYTimes Archive API.
+   - Once the seeding process is complete, you terminate the process by pressing `Ctrl + C`.
+
+5. Run the Application:
+   - After seeding the database, run the following command to start the application:
+     npm start
+    - This will start the Node.js server on port 3000 and connect to the MongoDB database.
+
+6. Access the Application:
+    - Open a web browser and navigate to http://localhost:3000 to access the application.
+    - You can now explore the past, search for articles, and enjoy the time-traveling experience!´
+
+7. (Optional) Connect to MongoDB with MongoDB Compass:
    - Open MongoDB Compass (the official GUI for MongoDB).
    - Connect to your local MongoDB instance using the following connection string:
      mongodb://localhost:6000
-
-4. Run the Application:
-   - Open a second terminal window for your application.
-   - Navigate to your project directory and run your application (assuming you're using Node.js and npm as an example):
-     npm install   - Install the required dependencies (only the first time)
-     npm start     - Start the application, typically on port 3000
-   - The application should now be running locally on http://localhost:3000
 
 Features:
     -Searchbar: Filters articles by keywords, allowing users to find relevant content quickly.
