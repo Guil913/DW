@@ -34,22 +34,21 @@ function sidebarToggle() {
     sidenav.classList.toggle("collapsed");
 
     const header = document.querySelector("header");
-    const main = document.querySelector("main"); // Ensure this targets your dynamic article container
+    const main = document.querySelector("main");
 
     if (sidenav.classList.contains("collapsed")) {
         console.log("oi2");
         header.style.marginLeft = "0";
         header.style.width = "100%";
 
-        // Adjust main content layout
-        main.style.marginLeft = "0";
+        
         main.style.width = "100%";
     } else {
         console.log("oi3");
         header.style.marginLeft = "20%";
         header.style.width = "calc(100% - 20%)";
 
-        // Adjust main content layout
+      
         main.style.marginLeft = "20%";
         main.style.width = "calc(100% - 20%)";
     }
