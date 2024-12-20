@@ -28,18 +28,33 @@ function sidebarToggle() {
   const sidenavToggle = document.querySelector(".sidenav-toggle")
   const sidenav = document.querySelector(".sidenav")
 
-  sidenavToggle.addEventListener("click", function() {
-    sidenav.classList.toggle("collapsed")
+  sidenavToggle.addEventListener("click", function () {
 
-    const header = document.querySelector("header")
+    console.log("oi");
+    sidenav.classList.toggle("collapsed");
+
+    const header = document.querySelector("header");
+    const main = document.querySelector("main"); // Ensure this targets your dynamic article container
+
     if (sidenav.classList.contains("collapsed")) {
-        header.style.marginLeft = "0"
-        header.style.width = "100%"
+        console.log("oi2");
+        header.style.marginLeft = "0";
+        header.style.width = "100%";
+
+        // Adjust main content layout
+        main.style.marginLeft = "0";
+        main.style.width = "100%";
     } else {
-        header.style.marginLeft = "20%"
-        header.style.width = "calc(100% - 20%)"
+        console.log("oi3");
+        header.style.marginLeft = "20%";
+        header.style.width = "calc(100% - 20%)";
+
+        // Adjust main content layout
+        main.style.marginLeft = "20%";
+        main.style.width = "calc(100% - 20%)";
     }
-})}
+});
+}
 
 async function loadPage(page) {
   const contentDiv = document.getElementById('main-content')
